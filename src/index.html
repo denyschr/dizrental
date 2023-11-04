@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dizrental</title>
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header lock-offset">
+	<div class="header__container">
+		<a href="#" class="header__logo">
+			<img src="img/svg/small-logo.svg" alt="Company logo">
+		</a>
+		<div data-da=".nav,1399.98,0" class="header__location location-header">
+			<label class="location-header__label location-header__label--left">
+				<input class="location-header__input" name="name" type="radio" checked>
+				<svg class="location-header__icon">
+					<use xlink:href="img/sprite.svg#location"></use>
+				</svg>
+				<span class="location-header__radio">Kyiv</span>
+			</label>
+			<label class="location-header__label location-header__label--right">
+				<input class="location-header__input" name="name" type="radio">
+				<svg class="location-header__icon">
+					<use xlink:href="img/sprite.svg#location"></use>
+				</svg>
+				<span class="location-header__radio">Dubai</span>
+			</label>
+		</div>
+		<div class="header__menu">
+			<nav class="nav" title="Main navigation">
+				<ul class="nav__list">
+					<li class="nav__item"><a href="#" class="nav__link">Choose a car</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Terms</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Prices</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">About Us</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Contacts</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div data-da=".nav,991.98" class="header__contacts contacts-header">
+			<div class="contacts-header__socials socials">
+				<a href="#" class="contacts-header__social socials__item socials__item--whatsapp" aria-label="Whatsapp">
+					<svg>
+						<use xlink:href="img/sprite.svg#whatsapp"></use>
+					</svg>
+				</a>
+				<a href="#" class="contacts-header__social socials__item socials__item--telegram" aria-label="Telegram">
+					<svg>
+						<use xlink:href="img/sprite.svg#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<a href="tel:+380951102047" class="contacts-header__phone">+38 (095) 110 20 47</a>
+			<button class="button contacts-header__button modal-button" data-path="modal-reservation">Book a call</button>
+		</div>
+		<div class="header__user-block user-block">
+			<button class="user-block__button user-block__button--cart">
+				<svg>
+					<use xlink:href="img/sprite.svg#car"></use>
+				</svg>
+				<span>1</span>
+			</button>
+			<button class="user-block__button user-block__button--account">
+				<svg>
+					<use xlink:href="img/sprite.svg#account"></use>
+				</svg>
+			</button>
+			<button type="button" class="burger"><span></span></button>
+		</div>
+	</div>
+</header>
+		<button type="button" class="go-to-top">
+			<span></span>
+		</button>
+		<div class="modal" data-target="modal-reservation">
+			<div class="modal__body">
+				<div class="modal__content">
+					<button class="modal__close" aria-label="Close modal">
+						<svg>
+							<use xlink:href="img/sprite.svg#xmark"></use>
+						</svg>
+					</button>
+					<h2 class="modal__title">I want a car</h2>
+					<form action="#" class="modal__form form-modal form">
+						<input type="text" class="form-modal__input form__input" placeholder="Name">
+						<input type="tel" class="form-modal__input form__input form__input--phone"
+							placeholder="+38 (099) 123-45-67">
+						<button class="button form-modal__button form__button" type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<main class="main">
+			<section class="hero">
+				<div class="hero__slider-wrapper">
+					<div class="hero__slider swiper">
+						<div class="hero__wrapper swiper-wrapper">
+							<div class="hero__slide swiper-slide" style="background-image: url('img/hero-bg-01.webp');"></div>
+							<div class="hero__slide swiper-slide" style="background-image: url('img/hero-bg-02.webp');"></div>
+							<div class="hero__slide swiper-slide" style="background-image: url('img/hero-bg-03.webp');"></div>
+							<div class="hero__slide swiper-slide" style="background-image: url('img/hero-bg-04.webp');"></div>
+						</div>
+					</div>
+				</div>
+				<div class="hero__container">
+					<div class="hero__content">
+						<div class="hero__title-area">
+							<h1 class="hero__title">Car rental in Kyiv</h1>
+							<span class="hero__subtitle">Hire or rent a car with or without driver</span>
+						</div>
+						<ul class="hero__list">
+							<li class="hero__item">Large fleet vehicles available</li>
+							<li class="hero__item">Car delivery to your geolocation</li>
+							<li class="hero__item">Discounts for regular clients</li>
+							<li class="hero__item">Any form payment</li>
+							<li class="hero__item">Favorable prices</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="order section-offset">
+				<div class="order__container">
+					<div class="order__content">
+						<h2 class="order__title">Book a rental online</h2>
+						<form class="order__form form-order">
+							<div class="form-order__date">
+								<label class="form-order__label label-order">
+									<input id="commencement-picker" class="label-order__input" type="date">
+									<span id="commencement" class="label-order__date">Lease start</span>
+								</label>
+								<label class="order__label label-order">
+									<input id="termination-picker" class="label-order__input" type="date">
+									<span id="termination" class="label-order__date">Lease finish</span>
+								</label>
+							</div>
+							<ul class="form-order__list">
+								<li class="form-order__item order-option">
+									<label class="order-option__label">
+										<input type="checkbox" class="order-option__input">
+										<span class="order-option__checkbox"></span>
+										<span class="order-option__text">SUV</span>
+									</label>
+								</li>
+								<li class="form-order__item order-option">
+									<label class="order-option__label">
+										<input type="checkbox" class="order-option__input">
+										<span class="order-option__checkbox"></span>
+										<span class="order-option__text">Business</span>
+									</label>
+								</li>
+								<li class="form-order__item order-option">
+									<label class="order-option__label">
+										<input type="checkbox" class="order-option__input">
+										<span class="order-option__checkbox"></span>
+										<span class="order-option__text">Premium</span>
+									</label>
+								</li>
+								<li class="form-order__item order-option">
+									<label class="order-option__label">
+										<input type="checkbox" class="order-option__input">
+										<span class="order-option__checkbox"></span>
+										<span class="order-option__text">Sport</span>
+									</label>
+								</li>
+								<li class="form-order__item order-option">
+									<label class="order-option__label">
+										<input type="checkbox" class="order-option__input">
+										<span class="order-option__checkbox"></span>
+										<span class="order-option__text">Sports car</span>
+									</label>
+								</li>
+								<li class="form-order__item order-option">
+									<label class="order-option__label">
+										<input type="checkbox" class="order-option__input">
+										<span class="order-option__checkbox"></span>
+										<span class="order-option__text">Comfort</span>
+									</label>
+								</li>
+							</ul>
+							<button class="gold-button form-order__button">Find options</button>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="car-fleet section-offset">
+				<div class="car-fleet__container">
+					<div class="car-fleet__top top-car-fleet">
+						<h2 class="top-car-fleet__title title">Our car fleet</h2>
+						<a href="#" class="button top-car-fleet__button">Watch all</a>
+					</div>
+					<ul class="car-fleet__list">
+						<li class="car-fleet__item">
+							<button data-target="all" class="button car-fleet__button _active">All</button>
+						</li>
+						<li class="car-fleet__item">
+							<button data-target="suv"
+								class="button car-fleet__button car-fleet__button--suv"><span>SUV</span></button>
+						</li>
+						<li class="car-fleet__item">
+							<button data-target="sports-car"
+								class="button car-fleet__button car-fleet__button--sports"><span>Sports</span></button>
+						</li>
+						<li class="car-fleet__item">
+							<button data-target="premium"
+								class="button car-fleet__button car-fleet__button--premium"><span>Premium</span></button>
+						</li>
+						<li class="car-fleet__item">
+							<button data-target="comfort"
+								class="button car-fleet__button car-fleet__button--comfort"><span>Comfort</span></button>
+						</li>
+					</ul>
+					<div class="car-fleet__content content-car-fleet">
+						<ul class="content-car-fleet__list">
+							<li class="content-car-fleet__item">
+								<article class="content-car-fleet__article article-car-fleet">
+									<span class="article-car-fleet__city">Kyiv</span>
+									<a href="#" class="article-car-fleet__img">
+										<img src="img/bmw-x2-2021.webp" srcset="img/bmw-x2-2021.webp 1x, img/bmw-x2-2021_2x.webp 2x"
+											alt="Bmw x2 2021">
+									</a>
+									<h3 class="article-car-fleet__title">BMW X2, 2021</h3>
+									<div class="article-car-fleet__properties">
+										<span class="article-car-fleet__value article-car-fleet__value--gasoline">2,3 l/gasoline</span>
+										<span class="article-car-fleet__value article-car-fleet__value--speed">317 hp</span>
+									</div>
+									<div class="article-car-fleet__bottom">
+										<a href="#" class="gold-button article-car-fleet__button">Order</a>
+										<span class="article-car-fleet__price">from <span>7 150</span> uah/day</span>
+									</div>
+								</article>
+							</li>
+						</ul>
+					</div>
+					<div class="car-fleet__text">
+						<div class="car-fleet__main-text">
+							<p>Kyiv is known for its majestic alleys, luxurious shopping centers and impressive architecture. With
+								such
+								surroundings, it is not surprising that the demand for luxury car rentals in Kyiv is growing every year.
+							</p>
+						</div>
+						<div class="car-fleet__subtext">
+							<p>These luxury cars have become an integral part of the lives of successful businessmen, showbiz stars
+								and
+								simply people who want to experience the unique sensations of comfort and power.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="rent section-background" style="background-image: url('img/rent-bg.webp');">
+				<div class="rent__container">
+					<h2 class="rent__title title">Rent a car right now!</h2>
+					<div class="rent__content">
+						<div class="rent__block">
+							<div class="rent__text">
+								<p>Dizrental in Kyiv offers a wide range of models from leading manufacturers such as Mercedes, BMW,
+									Audi. Customers can choose between sports cars, luxury sedans or exclusive SUVs to enjoy the comfort
+									and aesthetics of these excellent cars.</p>
+							</div>
+							<div class="rent__subtext">
+								<p>Thanks to rental services, everyone can experience owning such a vehicle for a few days or even a few
+									hours, without having to buy and maintain it.</p>
+							</div>
+						</div>
+						<form action="#" class="rent__form form-rent form">
+							<input type="text" class="form-rent__input form__input" placeholder="Name">
+							<input type="tel" class="form-rent__input form__input form__input--phone"
+								placeholder="+38 (099) 123-45-67">
+							<button class="button form-rent__button form__button" type="submit">Order</button>
+							<label class="form-rent__label form-rent__policy form-policy">
+								<input type="checkbox" class="form-rent__input-policy form-policy__input">
+								<span class="form-rent__checkbox-policy form-policy__checkbox"></span>
+								<span class="form-rent__text-policy form-policy__text"><span>By submitting the form, I agree to</span>
+									the personal data processing policy
+								</span>
+							</label>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="event section-offset">
+				<div class="event__container">
+					<h2 class="event__title title">Premium car rentals for events</h2>
+					<ul class="event__list">
+						<li class="event__item item-event">
+							<div class="item-event__content">
+								<div class="item-event__img">
+									<img src="img/event-01.webp" srcset="img/event-01.webp 1x, img/event-01_2x.webp 2x"
+										alt="Rent a car for a wedding">
+								</div>
+								<div class="item-event__block">
+									<div class="item-event__text">
+										<h3 class="item-event__title">Rent a car for a wedding</h3>
+										<p>We provide premium car rentals for photo shoots or video shoots</p>
+									</div>
+									<a href="#" class="item-event__button">
+										<img src="img/svg/arrow-right.svg" alt="Go">
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="event__item item-event">
+							<div class="item-event__content">
+								<div class="item-event__img">
+									<img src="img/event-02.webp" srcset="img/event-02.webp 1x, img/event-02_2x.webp 2x"
+										alt="Rent a car for photo shoots">
+								</div>
+								<div class="item-event__block">
+									<div class="item-event__text">
+										<h3 class="item-event__title">Rent a car for photo shoots</h3>
+										<p>We provide premium car rentals for photo shoots or video shoots</p>
+									</div>
+									<a href="#" class="item-event__button">
+										<img src="img/svg/arrow-right.svg" alt="Go">
+									</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="step section-offset">
+				<div class="step__container">
+					<h2 class="step__title title">3 steps to rent a car</h2>
+					<ul class="step__list">
+						<li class="step__item item-step">
+							<div class="item-step__content">
+								<div class="item-step__block item-step__block--apply">
+									<h3 class="item-step__title">Apply</h3>
+									<div class="item-step__text">
+										<p>You make an application on the website, contact by phone or messengers and book the car</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="step__item item-step">
+							<div class="item-step__content">
+								<div class="item-step__block item-step__block--contract">
+									<h3 class="item-step__title">Contract</h3>
+									<div class="item-step__text">
+										<p>You sign a rental car contract, make payment and security deposit</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="step__item item-step">
+							<div class="item-step__content">
+								<div class="item-step__block item-step__block--receiving">
+									<h3 class="item-step__title">Receiving</h3>
+									<div class="item-step__text">
+										<p>You can pick up the car in our showroom or we can deliver it anywhere in Kyiv</p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="bonus section-background" style="background-image: url('img/bonus-bg.webp');">
+				<div class="bonus__container">
+					<div class="bonus__slider swiper">
+						<div class="bonus__wrapper swiper-wrapper">
+							<div class="bonus__slide swiper-slide">
+								<div class="bonus__content content-bonus">
+									<h2 data-da=".bonus__container,767.98,0" class="content-bonus__title title">Discounts and promotions
+									</h2>
+									<div class="content-bonus__text">
+										<p>Luxury car rental in Kiev provides an opportunity to make dreams come true and create
+											unforgettable impressions. Whether it's an exclusive wedding, an impressive business trip or just
+											a desire to experience the luxury and elegance of a premium car, this service opens the doors to
+											the world of of high of style and comfort.</p>
+									</div>
+								</div>
+								<div class="bonus__block block-bonus">
+									<div class="block-bonus__img">
+										<img src="img/bonus-01.webp" srcset="img/bonus-01.webp 1x, img/bonus-01_2x.webp 2x"
+											alt="Discounts and promotions">
+										<div class="block-bonus__decor" aria-hidden="true">
+											<img src="img/svg/lighting.svg" alt>
+										</div>
+									</div>
+									<div class="block-bonus__content">
+										<h3 class="block-bonus__title">Discounts for loyal customers</h3>
+										<div class="block-bonus__text">
+											<p>We give discounts of up to 30% for repeat rentals to our regular customers.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="bonus__slide swiper-slide">
+								<div class="bonus__content content-bonus">
+									<h2 data-da=".bonus__container,767.98,0" class="content-bonus__title title">Discounts and promotions
+									</h2>
+									<div class="content-bonus__text">
+										<p>Luxury car rental in Kiev provides an opportunity to make dreams come true and create
+											unforgettable impressions. Whether it's an exclusive wedding, an impressive business trip or just
+											a desire to experience the luxury and elegance of a premium car, this service opens the doors to
+											the world of of high of style and comfort.</p>
+									</div>
+								</div>
+								<div class="bonus__block block-bonus">
+									<div class="block-bonus__img">
+										<img src="img/bonus-01.webp" alt="Скидки и акции">
+										<div class="block-bonus__decor" aria-hidden="true">
+											<img src="img/svg/lighting.svg" alt>
+										</div>
+									</div>
+									<div class="block-bonus__content">
+										<h3 class="block-bonus__title">Discounts for loyal customers</h3>
+										<div class="block-bonus__text">
+											<p>We give discounts of up to 30% for repeat rentals to our regular customers.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bonus__bottom bottom-bonus">
+						<div class="bottom-bonus__text">
+							<p>Luxury car rental in Kyiv is an opportunity to afford a bit of luxury and to create unforgettable
+								moments that will be remembered for a long time.</p>
+						</div>
+						<div class="bottom-bonus__flipping">
+							<div class="bottom-bonus__navbar">
+								<button type="button" class="swiper-button-prev" aria-label="Scroll back">
+									<svg>
+										<use xlink:href="img/sprite.svg#arrow-left"></use>
+									</svg>
+								</button>
+								<button type="button" class="swiper-button-next" aria-label="Scroll next">
+									<svg>
+										<use xlink:href="img/sprite.svg#arrow-right-white"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="bottom-bonus__pagination swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="service section-offset">
+				<div class="service__container">
+					<h2 class="service__title title">Our services</h2>
+					<ul class="service__list">
+						<li class="service__item item-service">
+							<div class="item-service__content">
+								<div class="item-service__img">
+									<img src="img/service-01.webp" srcset="img/service-01.webp 1x, img/service-01_2x.webp 2x"
+										alt="We deliver cars anywhere in Kyiv">
+								</div>
+								<div class="item-service__bottom">
+									<span class="item-service__text">We deliver cars anywhere in Kyiv</span>
+									<a href="#" class="item-service__button">
+										<img src="img/svg/arrow-right.svg" alt="Go">
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="service__item item-service">
+							<div class="item-service__content">
+								<div class="item-service__img">
+									<img src="img/service-02.webp" srcset="img/service-02.webp 1x, img/service-02_2x.webp 2x"
+										alt="Rent a car with a private driver">
+								</div>
+								<div class="item-service__bottom">
+									<span class="item-service__text">Rent a car with a private driver</span>
+									<a href="#" class="item-service__button">
+										<img src="img/svg/arrow-right.svg" alt="Go">
+									</a>
+								</div>
+							</div>
+						</li>
+						<li class="service__item item-service">
+							<div class="item-service__content">
+								<div class="item-service__img">
+									<img src="img/service-03.webp" srcset="img/service-03.webp 1x, img/service-03_2x.webp 2x"
+										alt="Substitute driver">
+								</div>
+								<div class="item-service__bottom">
+									<span class="item-service__text">Substitute driver</span>
+									<a href="#" class="item-service__button">
+										<img src="img/svg/arrow-right.svg" alt="Go">
+									</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="reason section-offset">
+				<div class="reason__container">
+					<h2 class="reason__title title">6 reasons to order a car rental in Dizrental</h2>
+					<ul class="reason__list">
+						<li class="reason__item item-reason">
+							<div class="item-reason__decor item-reason__decor--insurance" aria-hidden="true"></div>
+							<div class="item-reason__content">
+								<h3 class="item-reason__title">Insurance</h3>
+								<div class="item-reason__text">
+									<p>All our cars are insured by MTPL and CASCO</p>
+								</div>
+							</div>
+						</li>
+						<li class="reason__item item-reason">
+							<div class="item-reason__decor item-reason__decor--pricing" aria-hidden="true"></div>
+							<div class="item-reason__content">
+								<h3 class="item-reason__title">Pricing policy</h3>
+								<div class="item-reason__text">
+									<p>Always affordable prices and pleasant bonuses to regular customers</p>
+								</div>
+							</div>
+						</li>
+						<li class="reason__item item-reason">
+							<div class="item-reason__decor item-reason__decor--pricing" aria-hidden="true"></div>
+							<div class="item-reason__content">
+								<h3 class="item-reason__title">Pricing policy</h3>
+								<div class="item-reason__text">
+									<p>Always affordable prices and pleasant bonuses to regular customers</p>
+								</div>
+							</div>
+						</li>
+						<li class="reason__item item-reason">
+							<div class="item-reason__decor item-reason__decor--payment" aria-hidden="true"></div>
+							<div class="item-reason__content item-reason__content--payment">
+								<h3 class="item-reason__title">Payment</h3>
+								<div class="item-reason__text">
+									<p>Any form of payment convenient for you (cash/non-cash, bank transfer)</p>
+								</div>
+							</div>
+						</li>
+						<li class="reason__item item-reason">
+							<div class="item-reason__decor item-reason__decor--fleet" aria-hidden="true"></div>
+							<div class="item-reason__content item-reason__content--fleet">
+								<h3 class="item-reason__title">Fleet of vehicles</h3>
+								<div class="item-reason__text">
+									<p>The entire fleet is in excellent condition and always updated with new models</p>
+								</div>
+							</div>
+						</li>
+						<li class="reason__item item-reason">
+							<div class="item-reason__decor item-reason__decor--speed" aria-hidden="true"></div>
+							<div class="item-reason__content item-reason__content--speed">
+								<h3 class="item-reason__title">Speed</h3>
+								<div class="item-reason__text">
+									<p>Renting of any car in no more than 15 minutes</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="car-hire section-background" style="background-image: url('img/car-hire-bg.webp');">
+				<div class="car-hire__container">
+					<div class="car-hire__block">
+						<div class="car-hire__content car-hire__content--01">
+							<h2 class="car-hire__title title">Car hire in Dubai for different budget</h2>
+							<div class="car-hire__text">
+								<p>We guarantee that you get technically sound, clean car with a full tank, comfortable interior. Our
+									staff will independently pick up the car at the expiration of the rental term at the specified
+									location.</p>
+							</div>
+							<div class="car-hire__subtext">
+								<p>We strive to make car rental in Dubai affordable for everyone. That's why you can rent cars in our
+									office: Economy. Sedans and SUVs you can rent from 149 AED ($40) per day.Comfort. Sports cars, vans,
+									SUVs, sedans with comfortable saloon can be rented from 219 AED ($59) per day.Premium. Premium SUVs
+									and prestigious convertibles can be rent from AED 439 ($119) per day.</p>
+							</div>
+						</div>
+						<div data-da=".car-hire__content--01,767.98,1" class="car-hire__img">
+							<img src="img/car-hire-01.webp" srcset="img/car-hire-01.webp 1x, img/car-hire-01_2x.webp 2x"
+								alt="Car hire in Dubai">
+						</div>
+					</div>
+					<div class="car-hire__block">
+						<div data-da=".car-hire__content--02,767.98,1" class="car-hire__img">
+							<img src="img/car-hire-02.webp" srcset="img/car-hire-02.webp 1x, img/car-hire-02_2x.webp 2x"
+								alt="Car hire in Dubai">
+						</div>
+						<div class="car-hire__wrap-content">
+							<div class="car-hire__content car-hire__content--margin car-hire__content--02">
+								<h2 class="car-hire__title title">Rent a car in Kyiv</h2>
+								<div class="car-hire__subtext">
+									<p>For more information about car rental, you can visit our office, leave a request on the website or
+										call by phone <a href="tel:+380951102047">+38 (095) 110-20-47</a>
+									</p>
+									<p>We are always happy to help you with any questions and provide you with quality autos.</p>
+								</div>
+							</div>
+							<ul class="car-hire__features">
+								<li class="car-hire__feature feature-car-hire">
+									<div class="feature-car-hire__content">
+										<div class="feature-car-hire__decor feature-car-hire__decor--experience">
+											<svg>
+												<use xlink:href="img/sprite.svg#8"></use>
+											</svg>
+										</div>
+										<span class="feature-car-hire__text">More than 8 years in the
+											car
+											rental market</span>
+									</div>
+								</li>
+								<li class="car-hire__feature feature-car-hire">
+									<div class="feature-car-hire__content">
+										<div class="feature-car-hire__decor feature-car-hire__decor--models">
+											<svg>
+												<use xlink:href="img/sprite.svg#24"></use>
+											</svg>
+										</div>
+										<span class="feature-car-hire__text">24 premium and exclusive
+											models</span>
+									</div>
+								</li>
+								<li class="car-hire__feature feature-car-hire">
+									<div class="feature-car-hire__content">
+										<div class="feature-car-hire__decor feature-car-hire__decor--car">
+											<svg>
+												<use xlink:href="img/sprite.svg#car"></use>
+											</svg>
+										</div>
+										<span class="feature-car-hire__text">
+											Car fleet worth more than 250 million uah
+										</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="brand">
+				<div class="brand__container">
+					<ul class="brand__list">
+						<li class="brand__item">
+							<img src="img/audi.webp" srcset="img/audi.webp 1x, img/audi_2x.webp 2x" alt="Audi logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/bmw.webp" srcset="img/bmw.webp 1x, img/bmw_2x.webp 2x" alt="BMW logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/mercedes.webp" srcset="img/mercedes.webp 1x, img/mercedes_2x.webp 2x" alt="Mercedes logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/porshe.webp" srcset="img/porshe.webp 1x, img/porshe_2x.webp 2x" alt="Porshe logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/volkswagen.webp" srcset="img/volkswagen.webp 1x, img/volkswagen_2x.webp 2x"
+								alt="Volkswagen logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/kia.webp" srcset="img/kia.webp 1x, img/kia_2x.webp 2x" alt="Kia logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/ford.webp" srcset="img/ford.webp 1x, img/ford_2x.webp 2x" alt="Ford logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/audi.webp" srcset="img/audi.webp 1x, img/audi_2x.webp 2x" alt="Audi logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/bmw.webp" srcset="img/bmw.webp 1x, img/bmw_2x.webp 2x" alt="BMW logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/mercedes.webp" srcset="img/mercedes.webp 1x, img/mercedes_2x.webp 2x" alt="Mercedes logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/porshe.webp" srcset="img/porshe.webp 1x, img/porshe_2x.webp 2x" alt="Porshe logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/volkswagen.webp" srcset="img/volkswagen.webp 1x, img/volkswagen_2x.webp 2x"
+								alt="Volkswagen logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/kia.webp" srcset="img/kia.webp 1x, img/kia_2x.webp 2x" alt="Kia logo">
+						</li>
+						<li class="brand__item">
+							<img src="img/ford.webp" srcset="img/ford.webp 1x, img/ford_2x.webp 2x" alt="Ford logo">
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="contacts">
+				<div class="contacts__container">
+					<div class="contacts__img">
+						<img src="img/car-adviser.webp" srcset="img/car-adviser.webp 1x, img/car-adviser_2x.webp 2x"
+							alt="Car adviser">
+					</div>
+					<div class="contacts__content">
+						<h2 class="contacts__title title">Any questions?</h2>
+						<div class="contacts__text">
+							<p>A manager will contact you within 15 minutes and can answer any questions you may have</p>
+						</div>
+						<a href="tel:+380951102047" class="contacts__link">+38 (095) 110 20 47</a>
+						<form action="#" class="contacts__form form-contacts form">
+							<input type="text" class="form-contacts__input form__input" placeholder="Name">
+							<input type="tel" class="form-contacts__input form__input form__input--phone"
+								placeholder="+38 (099) 123-45-67">
+							<button class="button form-contacts__button form__button" type="submit">Order</button>
+							<label class="form-contacts__label form-contacts__policy form-policy">
+								<input type="checkbox" class="form-contacts__input-policy form-policy__input">
+								<span class="form-contacts__checkbox-policy form-policy__checkbox"></span>
+								<span class="form-contacts__text-policy form-policy__text"><span>By submitting the form, I agree
+										to</span> the personal data processing policy
+								</span>
+							</label>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+	<div class="footer__container">
+		<div class="footer__left">
+			<a href="#" class="footer__logo">
+				<img src="img/svg/big-logo.svg" alt="Company logo">
+			</a>
+			<div class="footer__contacts">
+				<div class="footer__info">
+					<a href="tel:+380951102047" class="footer__phone">+38 (095) 110 20 47</a>
+					<span class="footer__caption">Working hours: from 10:00 am to 20:00 pm</span>
+				</div>
+				<button class="button footer__button">Book a call</button>
+			</div>
+			<address class="footer__address address-footer">
+				<span class="address-footer__name">Kyiv, Kolektorna St 47-A</span>
+				<a href="mailto:info@dizrental.ua" class="address-footer__mail">info@dizrental.ua</a>
+			</address>
+			<div class="socials footer__socials">
+				<a href="#" class="socials__item socials__item--whatsapp footer__social" aria-label="Whatsapp">
+					<svg>
+						<use xlink:href="img/sprite.svg#whatsapp"></use>
+					</svg>
+				</a>
+				<a href="#" class="socials__item socials__item--telegram footer__social" aria-label="Telegram">
+					<svg>
+						<use xlink:href="img/sprite.svg#telegram"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+		<div class="footer__right">
+			<div class="spoilers">
+				<ul data-spoilers="767.98,max" class="spoilers__list">
+					<li class="spoilers__item">
+						<button tabindex="-1" type="button" data-spoiler class="spoilers__title">Clients</button>
+						<div class="spoilers__text">
+							<ul>
+								<li><a href="#">About us</a></li>
+								<li><a href="#">Terms</a></li>
+								<li><a href="#">Testimonials</a></li>
+								<li><a href="#">Articles</a></li>
+								<li><a href="#">Contacts</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul data-spoilers="767.98,max" class="spoilers__list">
+					<li class="spoilers__item">
+						<button tabindex="-1" type="button" data-spoiler class="spoilers__title">Car fleet</button>
+						<div class="spoilers__text">
+							<ul>
+								<li><a href="#">SUVs</a></li>
+								<li><a href="#">Sports car</a></li>
+								<li><a href="#">Business</a></li>
+								<li><a href="#">Premium</a></li>
+								<li><a href="#">Comfort</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<ul data-spoilers="767.98,max" class="spoilers__list">
+					<li class="spoilers__item">
+						<button tabindex="-1" type="button" data-spoiler class="spoilers__title">Events</button>
+						<div class="spoilers__text">
+							<ul>
+								<li><a href="#">For a wedding</a></li>
+								<li><a href="#">For photo shoot</a></li>
+								<li><a href="#">For video shoot</a></li>
+								<li><a href="#">For birthday party</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__box">
+				<small class="footer__copy">© 2023 Dizrental</small>
+				<a href="#" class="footer__privacy">Privacy policy</a>
+			</div>
+		</div>
+	</div>
+</footer>
+	</div>
+	<script src="js/main.min.js"></script>
+</body>
+
+</html>

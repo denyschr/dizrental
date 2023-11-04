@@ -1,0 +1,27 @@
+// Fonts
+$fontMain: "Poppins";
+$fontSecondary: "Roboto";
+$fontSize: toRem(16);
+
+// Colors
+$colorMain: #1f1f1f;
+$white: #fff;
+$gold: linear-gradient(67deg, #9f7437 9.19%, #e3d293 92.03%);
+$zombie: #e3d293;
+$dusty-gray: #989898;
+$silver: #9f9f9f;
+$gallery: #ebebeb;
+
+// Adaptive grid
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1320;
+$containerOffset: 15;
+$containerWidth: calc($maxWidthContainer + ($containerOffset * 2));
+
+// Breakpoints
+$pc: em(1399.98);
+$smallpc: em(1159.98);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$smallMobile: em(479.98);

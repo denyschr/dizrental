@@ -1,0 +1,82 @@
+.service {
+	&__title {
+		margin-bottom: toRem(60);
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("margin-bottom", 60, 30, 0, 1160, 992);
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: toRem(24);
+		@media (max-width: $tablet) {
+			@include adaptiveValue("gap", 24, 15, 0, 992, 768);
+		}
+		@media (max-width: $mobile) {
+			row-gap: toRem(40);
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: $smallMobile) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}
+
+.item-service {
+	position: relative;
+	&__img {
+		overflow: hidden;
+		margin-bottom: toRem(42);
+		border-radius: toRem(20);
+		img {
+			width: 100%;
+		}
+		@media (max-width: $tablet) {
+			@include adaptiveValue("margin-bottom", 42, 25, 0, 992, 768);
+		}
+	}
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		gap: toRem(48);
+		@media (max-width: $tablet) {
+			gap: toRem(38);
+		}
+	}
+	&__text {
+		max-width: toRem(280);
+		font-size: toRem(20);
+		font-weight: 700;
+		line-height: 1.4;
+		@media (max-width: $tablet) {
+			font-size: toRem(18);
+		}
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: toRem(54);
+		height: toRem(54);
+		padding: toRem(5);
+		border-radius: toRem(27);
+		border: 2px solid #ebebeb;
+		transition: background 0.2s ease-in-out;
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #ebebeb;
+			}
+		}
+		@media (max-width: $tablet) {
+			width: toRem(44);
+			height: toRem(44);
+		}
+	}
+}

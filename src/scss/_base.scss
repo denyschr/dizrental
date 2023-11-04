@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea {
+  font-family: $fontMain;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+body {
+  min-width: toRem($minWidth);
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #f4f4f4;
+  font-family: $fontMain, sans-serif;
+  font-size: $fontSize;
+  font-weight: 500;
+  color: $colorMain;
+  &.locked {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  padding: toRem(124) toRem(30) 0;
+  flex-grow: 1;
+  @media (max-width: $pc) {
+    padding: toRem(110) toRem(30) toRem(0);
+  }
+  @media (max-width: $tablet) {
+    padding: toRem(110) 0 0;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: toRem(1);
+  height: toRem(1);
+  margin: toRem(-1);
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+[class*="_container"] {
+  max-width: toRem($containerWidth);
+  margin: 0 auto;
+  padding: 0 toRem($containerOffset);
+}
+
+.section-offset {
+  @include adaptiveValue("padding-bottom", 120, 70, 0, 1920, 1160);
+}
+
+.section-background {
+  position: relative;
+  overflow: hidden;
+  border-radius: toRem(36);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: $tablet) {
+    border-radius: 0;
+  }
+}
+
+.title {
+  font-family: $fontSecondary, sans-serif;
+  font-size: toRem(48);
+  font-weight: 700;
+  line-height: 1.29;
+  @media (max-width: $smallpc) {
+    @include adaptiveValue("font-size", 48, 38, 0, 1160, 992);
+  }
+  @media (max-width: $tablet) {
+    @include adaptiveValue("font-size", 38, 32, 0, 992, 768);
+  }
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  padding: toRem(12) toRem(20);
+  border-radius: toRem(8);
+  border: toRem(2) solid #3c3c3c;
+}
+
+.gold-button {
+  padding: toRem(25) toRem(34);
+  border-radius: toRem(10);
+  background: linear-gradient(67deg, #9f7437 9.19%, #e3d293 92.03%);
+  color: $white;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  @media (any-hover: hover) {
+    &:hover {
+      background: linear-gradient(67deg, #be8638 9.19%, #8d7d43 92.03%);
+    }
+  }
+  @media (max-width: $pc) {
+    font-size: toRem(14);
+  }
+}

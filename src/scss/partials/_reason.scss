@@ -1,0 +1,93 @@
+.reason {
+	&__title {
+		margin-bottom: toRem(70);
+		@media (max-width: $tablet) {
+			@include adaptiveValue("margin-bottom", 70, 40, 0, 992, 768);
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		@include adaptiveValue("column-gap", 213, 100, 0, 1920, 1160);
+		@include adaptiveValue("row-gap", 77, 50, 0, 1920, 1160);
+		@media (max-width: $tablet) {
+			@include adaptiveValue("column-gap", 100, 60, 0, 992, 768);
+			@include adaptiveValue("row-gap", 50, 40, 0, 992, 768);
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}
+
+.item-reason {
+	display: flex;
+	align-items: start;
+	gap: toRem(40);
+	@media (max-width: $tablet) {
+		@include adaptiveValue("gap", 40, 25, 0, 992, 768);
+	}
+	&__decor {
+		position: relative;
+		width: toRem(112);
+		height: toRem(112);
+		flex-shrink: 0;
+		border-radius: toRem(20);
+		background-color: $white;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		@media (max-width: $tablet) {
+			width: toRem(100);
+			height: toRem(100);
+		}
+		&--insurance::before {
+			width: toRem(54);
+			height: toRem(52);
+			background-image: url("../img/svg/insurance.svg");
+		}
+		&--pricing::before {
+			width: toRem(64);
+			height: toRem(40);
+			background-image: url("../img/svg/qr-code.svg");
+		}
+		&--payment::before {
+			width: toRem(54);
+			height: toRem(54);
+			background-image: url("../img/svg/payment.svg");
+		}
+		&--fleet::before {
+			width: toRem(54);
+			height: toRem(54);
+			background-image: url("../img/svg/wheel.svg");
+		}
+		&--speed::before {
+			width: toRem(60);
+			height: toRem(60);
+			background-image: url("../img/svg/clock.svg");
+		}
+	}
+	&__title {
+		margin-bottom: toRem(15);
+		font-size: toRem(20);
+		font-weight: 700;
+		line-height: 1.4;
+		@media (max-width: $tablet) {
+			line-height: 1.2;
+			margin-bottom: toRem(10);
+		}
+	}
+	&__text {
+		color: $dusty-gray;
+		line-height: 1.62;
+		p:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+}

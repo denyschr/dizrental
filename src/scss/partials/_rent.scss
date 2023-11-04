@@ -1,0 +1,82 @@
+.rent {
+	@include adaptiveValue("min-height", 764, 600, 0, 1920, 1160);
+	@include adaptiveValue("margin-bottom", 120, 70, 0, 1920, 1160);
+	@include adaptiveValue("padding-top", 122, 70, 0, 1920, 1160);
+	@include adaptiveValue("padding-bottom", 118, 66, 0, 1920, 1160);
+	&::before {
+		content: "";
+		background: linear-gradient(0deg, rgba(18, 18, 18, 0.74) 0%, rgba(18, 18, 18, 0.74) 100%);
+	}
+	@media (max-width: $smallpc) {
+		@include adaptiveValue("min-height", 600, 550, 0, 1160, 992);
+	}
+	&__container {
+		position: relative;
+		z-index: 1;
+	}
+	&__title {
+		@include adaptiveValue("margin-bottom", 70, 30, 0, 1920, 1160);
+		color: $white;
+	}
+	&__content {
+		display: flex;
+		align-items: start;
+		@include adaptiveValue("gap", 136, 65, 0, 1920, 1160);
+		@media (max-width: $tablet) {
+			@include adaptiveValue("gap", 65, 30, 0, 992, 768);
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column-reverse;
+		}
+	}
+	&__block {
+		max-width: toRem(760);
+		@media (max-width: $pc) {
+			@include adaptiveValue("max-width", 680, 600, 0, 1400, 1160);
+		}
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("max-width", 600, 500, 0, 1160, 992);
+		}
+		@media (max-width: $tablet) {
+			@include adaptiveValue("max-width", 500, 400, 0, 992, 768);
+		}
+		@media (max-width: $mobile) {
+			max-width: 100%;
+		}
+	}
+	&__block > *:last-child {
+		margin-bottom: 0;
+	}
+	&__text {
+		margin-bottom: toRem(36);
+		color: $white;
+		@include adaptiveValue("font-size", 28, 22, 0, 1920, 1160);
+		font-weight: 600;
+		line-height: 1.35;
+		p:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(25);
+		}
+	}
+	&__subtext {
+		margin-bottom: toRem(15);
+		opacity: 0.8;
+		color: $white;
+		font-size: toRem(18);
+		line-height: 1.66;
+		p:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+}
+
+.form-rent {
+	flex-grow: 1;
+	&__button {
+		&:hover {
+			background-color: $colorMain;
+		}
+	}
+}

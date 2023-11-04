@@ -1,0 +1,75 @@
+.spoilers {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	@include adaptiveValue("gap", 95, 60, 0, 1920, 1160);
+	margin-bottom: toRem(46);
+	@media (max-width: $tablet) {
+		@include adaptiveValue("gap", 60, 30, 0, 992, 768);
+	}
+	@media (max-width: $mobile) {
+		grid-template-columns: repeat(1, 1fr);
+		gap: toRem(1);
+		margin-bottom: 0;
+		margin-left: toRem(-15);
+		margin-right: toRem(-15);
+	}
+	&__list._init .spoilers__title {
+		cursor: pointer;
+		&::after {
+			content: "";
+			position: absolute;
+			right: toRem(28);
+			top: 50%;
+			transform: translateY(-50%);
+			width: toRem(13);
+			height: toRem(12);
+			background-image: url("../img/svg/arrow-down.svg");
+			background-repeat: no-repeat;
+			background-position: center;
+			transition: transform 0.3s ease 0s;
+		}
+	}
+	&__list._init .spoilers__title._active::after {
+		transform: translateY(-50%) rotate(180deg);
+	}
+	&__item {
+		@media (max-width: $mobile) {
+		}
+	}
+	&__title {
+		position: relative;
+		width: 100%;
+		margin-bottom: toRem(20);
+		text-align: left;
+		background-color: transparent;
+		color: $white;
+		font-size: toRem(15);
+		font-weight: 700;
+		line-height: 1.33;
+		text-transform: uppercase;
+		cursor: default;
+		@media (max-width: $mobile) {
+			margin-bottom: toRem(0);
+			padding: toRem(25) toRem(28) toRem(25) toRem(20);
+			background-color: #141414;
+		}
+	}
+	&__text > ul {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(15);
+		@media (max-width: $mobile) {
+			align-items: center;
+			padding: toRem(26);
+		}
+	}
+	&__text > ul > li > * {
+		color: #afafaf;
+		transition: color 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}

@@ -1,0 +1,158 @@
+.hero {
+	position: relative;
+	overflow: hidden;
+	@include adaptiveValue("min-height", 960, 700, 0, 1920, 1160);
+	border-radius: 0 0 toRem(36) toRem(36);
+	@media (max-width: $smallpc) {
+		@include adaptiveValue("min-height", 700, 650, 0, 1160, 992);
+	}
+	@media (max-width: $tablet) {
+		border-radius: 0;
+		min-height: toRem(500);
+	}
+	@media (max-width: $mobile) {
+		min-height: toRem(400);
+	}
+	@media (max-width: $smallMobile) {
+		@include adaptiveValue("min-height", 400, 320, 0, 480, 320);
+	}
+	&__slider-wrapper {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	&__slider {
+		width: 100%;
+		height: 100%;
+	}
+	&__slide {
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(180deg, rgba(17, 17, 17, 0.11) 0%, rgba(17, 17, 17, 0.96) 100%);
+		}
+	}
+	&__container {
+		position: relative;
+		z-index: 1;
+		@media (min-width: $tablet) {
+			padding-bottom: toRem(190);
+		}
+	}
+	&__content {
+		@include adaptiveValue("padding-top", 170, 100, 0, 1920, 1160);
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("padding-top", 100, 70, 0, 1160, 992);
+		}
+		@media (max-width: $smallMobile) {
+			@include adaptiveValue("padding-top", 70, 40, 0, 480, 320);
+		}
+	}
+	&__title-area {
+		margin-bottom: toRem(70);
+		padding-bottom: toRem(70);
+		border-bottom: toRem(2) solid rgba(255, 255, 255, 0.2);
+		text-align: center;
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("margin-bottom", 70, 40, 0, 1160, 992);
+			@include adaptiveValue("padding-bottom", 70, 40, 0, 1160, 992);
+		}
+		@media (max-width: $smallMobile) {
+			text-align: left;
+		}
+	}
+	&__title-area > *:last-child {
+		margin-bottom: 0;
+	}
+	&__title {
+		max-width: toRem(755);
+		margin: 0 auto;
+		@include adaptiveValue("margin-bottom", 40, 25, 0, 1920, 1160);
+		color: $white;
+		font-family: $fontSecondary, sans-serif;
+		@include adaptiveValue("font-size", 89, 60, 0, 1920, 1160);
+		font-weight: 700;
+		line-height: 1.6;
+		@media (max-width: $tablet) {
+			line-height: 1.2;
+			@include adaptiveValue("font-size", 60, 48, 0, 992, 768);
+		}
+		@media (max-width: $smallMobile) {
+			margin-bottom: toRem(20);
+			@include adaptiveValue("font-size", 48, 32, 0, 480, 320);
+		}
+	}
+	&__subtitle {
+		margin-bottom: toRem(20);
+		color: $white;
+		font-size: toRem(24);
+		line-height: 1.33;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		column-gap: toRem(48);
+		row-gap: toRem(30);
+		padding: 0 toRem(60);
+		counter-reset: number 0;
+		@media (max-width: $pc) {
+			column-gap: toRem(28);
+		}
+		@media (max-width: $smallpc) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media (max-width: $tablet) {
+			padding: 0 toRem(30);
+		}
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(5, 1fr);
+			padding: 0;
+			padding-bottom: toRem(30);
+			overflow: auto;
+		}
+	}
+	&__item {
+		position: relative;
+		padding-left: toRem(43);
+		color: $white;
+		font-size: toRem(17);
+		line-height: 1.52;
+		counter-increment: number;
+		&::before {
+			content: counter(number);
+			position: absolute;
+			left: 0;
+			top: toRem(2);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: toRem(26);
+			height: toRem(26);
+			padding: toRem(8) toRem(10);
+			background-color: $white;
+			border-radius: toRem(14);
+			color: $colorMain;
+			text-align: center;
+			font-family: $fontSecondary, sans-serif;
+			font-size: toRem(10);
+			font-weight: 700;
+		}
+		@media (max-width: $mobile) {
+			min-width: toRem(190);
+		}
+		@media (max-width: $smallMobile) {
+			min-width: toRem(210);
+		}
+	}
+}

@@ -1,0 +1,325 @@
+.car-fleet {
+	&__content {
+		@include adaptiveValue("margin-bottom", 120, 60, 0, 1920, 1160);
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: toRem(20);
+		margin-bottom: toRem(50);
+		overflow: auto;
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(25);
+			padding-bottom: toRem(25);
+		}
+	}
+	&__button {
+		padding: toRem(20) toRem(30);
+		border: none;
+		background-color: $white;
+		border-radius: toRem(10);
+		font-size: toRem(14);
+		line-height: 1.42;
+		transition: background 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #eaeaea;
+			}
+		}
+		span {
+			position: relative;
+			display: inline-block;
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			&::first-letter {
+				text-transform: uppercase;
+			}
+		}
+	}
+	&__button._active {
+		pointer-events: none;
+		background-color: $colorMain;
+		color: $white;
+	}
+	&__button--suv {
+		span {
+			padding-left: toRem(50);
+			text-transform: uppercase;
+			&::before {
+				content: "";
+				width: toRem(30);
+				height: toRem(12);
+				background-image: url("../img/svg/suv.svg");
+			}
+		}
+	}
+	&__button--sports {
+		span {
+			padding-left: toRem(56);
+			&::before {
+				content: "";
+				width: toRem(36);
+				height: toRem(10);
+				background-image: url("../img/svg/sports.svg");
+			}
+		}
+	}
+	&__button--premium {
+		span {
+			padding-left: toRem(73);
+			&::before {
+				content: "";
+				width: toRem(53);
+				height: toRem(10);
+				background-image: url("../img/svg/premium.svg");
+			}
+		}
+	}
+	&__button--comfort {
+		span {
+			padding-left: toRem(53);
+			&::before {
+				content: "";
+				width: toRem(33);
+				height: toRem(12);
+				background-image: url("../img/svg/comfort.svg");
+			}
+		}
+	}
+	&__text {
+		max-width: toRem(1200);
+	}
+	&__main-text {
+		@include adaptiveValue("margin-bottom", 36, 26, 0, 1920, 1160);
+		@include adaptiveValue("font-size", 28, 22, 0, 1920, 1160);
+		font-weight: 600;
+		line-height: 1.35;
+		p:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	&__subtext {
+		color: #9f9f9f;
+		font-size: toRem(18);
+		line-height: 1.66;
+		p:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+}
+
+.top-car-fleet {
+	display: flex;
+	align-items: center;
+	gap: toRem(60);
+	margin-bottom: toRem(48);
+	@media (max-width: $smallpc) {
+		@include adaptiveValue("gap", 60, 30, 0, 1160, 992);
+		@include adaptiveValue("margin-bottom", 48, 28, 0, 1160, 992);
+	}
+	@media (max-width: $smallMobile) {
+		gap: toRem(20);
+	}
+	&__button {
+		flex-shrink: 0;
+		border-color: $colorMain;
+		transition:
+			background 0.2s ease-in-out,
+			color 0.2s ease-in-out;
+		&:hover {
+			background-color: $colorMain;
+			color: $white;
+		}
+	}
+}
+
+.content-car-fleet {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: toRem(24);
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: $mobile) {
+			gap: toRem(18);
+		}
+		@media (max-width: em(569.98)) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}
+.article-car-fleet {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: toRem(50) toRem(46) toRem(50) toRem(50);
+	border-radius: toRem(10);
+	background-color: $white;
+	@media (max-width: $pc) {
+		padding: toRem(38) toRem(40) toRem(38) toRem(38);
+	}
+	@media (max-width: $smallpc) {
+		padding: toRem(30) toRem(36) toRem(30) toRem(30);
+	}
+	@media (max-width: $mobile) {
+		padding: toRem(25) toRem(28) toRem(25) toRem(25);
+	}
+	@media (max-width: em(569.98)) {
+		padding: toRem(50) toRem(46) toRem(50) toRem(50);
+	}
+	@media (max-width: $smallMobile) {
+		padding: toRem(50) toRem(30) toRem(30);
+	}
+	&__city {
+		position: absolute;
+		right: toRem(24);
+		top: toRem(24);
+		display: inline-block;
+		padding: toRem(8) toRem(10);
+		border-radius: toRem(6);
+		background-color: #f0f0f0;
+		font-size: toRem(9);
+		font-weight: 700;
+		line-height: 1;
+		text-transform: uppercase;
+		@media (max-width: $smallpc) {
+			right: toRem(15);
+			top: toRem(15);
+		}
+		@media (max-width: em(569.98)) {
+			right: toRem(24);
+			top: toRem(24);
+		}
+	}
+	&__img {
+		margin-bottom: toRem(40);
+		text-align: center;
+		@media (max-width: $smallpc) {
+			margin-bottom: toRem(30);
+		}
+	}
+	&__title {
+		margin-bottom: toRem(30);
+		font-size: toRem(20);
+		font-weight: 700;
+		@media (max-width: $pc) {
+			font-size: toRem(18);
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(20);
+		}
+		@media (max-width: $mobile) {
+			font-size: toRem(20);
+		}
+	}
+	&__properties {
+		display: flex;
+		align-items: center;
+		gap: toRem(26);
+		margin-bottom: toRem(30);
+		@media (max-width: $smallpc) {
+			flex-direction: column;
+			align-items: start;
+			margin-bottom: toRem(22);
+		}
+		@media (max-width: $tablet) {
+			flex-direction: row;
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			gap: toRem(18);
+		}
+		@media (max-width: em(569.98)) {
+			flex-direction: row;
+		}
+	}
+	&__value {
+		position: relative;
+		color: #707070;
+		font-size: toRem(13);
+		font-weight: 700;
+		line-height: 1.53;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		@media (max-width: $mobile) {
+			font-size: toRem(16);
+		}
+	}
+	&__value--gasoline {
+		padding-left: toRem(40);
+		&::before {
+			content: "";
+			width: toRem(25);
+			height: toRem(18);
+			background-image: url("../img/svg/gasoline.svg");
+		}
+	}
+	&__value--speed {
+		padding-left: toRem(37);
+		&::before {
+			content: "";
+			width: toRem(22);
+			height: toRem(18);
+			background-image: url("../img/svg/speed.svg");
+		}
+	}
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 57, 28, 0, 1920, 1160);
+		margin-top: auto;
+		padding-top: toRem(34);
+		border-top: toRem(1) solid $gallery;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			gap: toRem(20);
+			align-items: stretch;
+		}
+	}
+	&__button {
+		padding: toRem(8) toRem(20);
+		line-height: 1.66;
+		@media (max-width: em(569.98)) {
+			padding: toRem(20);
+			font-size: toRem(16);
+		}
+		@media (max-width: $smallMobile) {
+			padding: toRem(15) toRem(20);
+		}
+	}
+	&__price {
+		color: #ababab;
+		font-size: toRem(14);
+		font-weight: 700;
+		line-height: 1.42;
+		span {
+			color: $colorMain;
+			font-size: toRem(24);
+			@include adaptiveValue("font-size", 24, 18, 0, 1920, 1160);
+			font-weight: 700;
+			@media (max-width: $tablet) {
+				font-size: toRem(22);
+			}
+			@media (max-width: $mobile) {
+				font-size: toRem(24);
+			}
+		}
+	}
+}

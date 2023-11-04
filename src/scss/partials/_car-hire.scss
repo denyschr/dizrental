@@ -1,0 +1,158 @@
+.car-hire {
+	@include adaptiveValue("min-height", 1459, 1180, 0, 1920, 1160);
+	@include adaptiveValue("padding-top", 120, 70, 0, 1920, 1160);
+	@include adaptiveValue("padding-bottom", 120, 70, 0, 1920, 1160);
+	border-radius: toRem(36) toRem(36) 0 0;
+	&::before {
+		content: "";
+		background: linear-gradient(0deg, rgba(18, 18, 18, 0.9) 0%, rgba(18, 18, 18, 0.9) 100%);
+	}
+	@media (max-width: $tablet) {
+		border-radius: 0;
+	}
+	&__container {
+		position: relative;
+		z-index: 1;
+	}
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		@include adaptiveValue("gap", 112, 70, 0, 1920, 1160);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 110, 70, 0, 1920, 1160);
+		}
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("gap", 70, 50, 0, 1160, 992);
+		}
+		@media (max-width: $tablet) {
+			@include adaptiveValue("gap", 50, 30, 0, 992, 768);
+		}
+	}
+	&__content {
+		max-width: toRem(648);
+		@media (max-width: $pc) {
+			max-width: toRem(600);
+		}
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("max-width", 600, 480, 0, 1160, 992);
+		}
+		@media (max-width: $tablet) {
+			@include adaptiveValue("max-width", 480, 400, 0, 992, 768);
+		}
+		@media (max-width: $mobile) {
+			max-width: 100%;
+		}
+	}
+	&__content--margin {
+		margin-bottom: toRem(50);
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("margin-bottom", 50, 30, 0, 1160, 992);
+		}
+	}
+	&__content > *:last-child {
+		margin-bottom: toRem(0);
+	}
+	&__title {
+		@include adaptiveValue("margin-bottom", 50, 25, 0, 1920, 1160);
+		color: $white;
+	}
+	&__text {
+		margin-bottom: toRem(36);
+		color: $white;
+		@include adaptiveValue("font-size", 28, 22, 0, 1920, 1160);
+		font-weight: 600;
+		line-height: 1.35;
+		p:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(25);
+		}
+	}
+	&__subtext {
+		margin-bottom: toRem(30);
+		color: $silver;
+		font-size: toRem(18);
+		line-height: 1.66;
+		p:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+		a {
+			color: $white;
+			transition: color 0.2s ease-in-out;
+			@media (any-hover: hover) {
+				&:hover {
+					color: $zombie;
+				}
+			}
+		}
+	}
+	&__img {
+		overflow: hidden;
+		border-radius: toRem(20);
+		img {
+			width: 100%;
+		}
+		@media (max-width: $mobile) {
+			margin-bottom: toRem(20);
+		}
+	}
+	&__features {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: toRem(46);
+		max-width: toRem(748);
+		padding-top: toRem(60);
+		border-top: toRem(1) solid rgba(255, 255, 255, 0.16);
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("gap", 46, 32, 0, 1160, 992);
+			grid-template-columns: repeat(2, 1fr);
+			@include adaptiveValue("padding-top", 60, 30, 0, 1160, 992);
+		}
+		@media (max-width: $smallMobile) {
+			grid-template-columns: repeat(1, 1fr);
+			align-items: center;
+		}
+	}
+}
+
+.feature-car-hire {
+	&__content {
+		display: flex;
+		align-items: start;
+		gap: toRem(18);
+	}
+	&__decor {
+		&--experience {
+			svg {
+				width: toRem(21);
+				height: toRem(21);
+			}
+		}
+		&--models {
+			svg {
+				width: toRem(49);
+				height: toRem(21);
+			}
+		}
+		&--car {
+			svg {
+				width: toRem(29);
+				height: toRem(20);
+				fill: $white;
+				opacity: 0.2;
+			}
+		}
+	}
+	&__text {
+		color: $white;
+		font-size: toRem(13);
+		font-weight: 700;
+		line-height: 1.84;
+		text-transform: uppercase;
+		@media (max-width: $smallMobile) {
+			font-size: toRem(15);
+		}
+	}
+}

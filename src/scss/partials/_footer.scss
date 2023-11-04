@@ -1,0 +1,207 @@
+.footer {
+	margin: 0 toRem(30);
+	padding: toRem(110) 0 toRem(100);
+	border-radius: toRem(36) toRem(36) 0 0;
+	background-color: #1d1d1d;
+	@media (max-width: $pc) {
+		padding: toRem(70) 0 toRem(60);
+	}
+	@media (max-width: $smallpc) {
+		padding: toRem(55) 0 toRem(50);
+	}
+	@media (max-width: $tablet) {
+		margin: 0;
+		border-radius: 0;
+	}
+	@media (max-width: $mobile) {
+		padding: toRem(45) 0 toRem(40);
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 136, 60, 0, 1920, 1160);
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: stretch;
+			gap: toRem(40);
+		}
+	}
+	&__left {
+		align-self: flex-start;
+		text-align: right;
+		@media (max-width: $mobile) {
+			align-self: stretch;
+			text-align: left;
+		}
+	}
+	&__right {
+		flex-grow: 1;
+	}
+	&__logo {
+		display: inline-block;
+		margin-bottom: toRem(60);
+		@media (max-width: $smallpc) {
+			@include adaptiveValue("margin-bottom", 60, 40, 0, 1160, 992);
+		}
+	}
+	&__contacts {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: toRem(30);
+		margin-bottom: toRem(40);
+		@media (max-width: $tablet) {
+			margin-bottom: toRem(30);
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: toRem(20);
+		}
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(10);
+		@media (max-width: $smallpc) {
+			max-width: toRem(180);
+		}
+		@media (max-width: $mobile) {
+			max-width: 100%;
+		}
+	}
+	&__phone {
+		color: $white;
+		font-family: $fontSecondary;
+		font-size: toRem(18);
+		font-weight: 700;
+		line-height: 1.11;
+		transition: color 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $zombie;
+			}
+		}
+		@media (max-width: $tablet) {
+			font-size: toRem(16);
+		}
+		@media (max-width: $mobile) {
+			font-size: toRem(18);
+		}
+	}
+	&__caption {
+		display: inline-block;
+		color: #afafaf;
+		font-size: toRem(12);
+	}
+	&__button {
+		flex-shrink: 0;
+		border-color: $white;
+		color: $white;
+		font-size: toRem(13);
+		font-weight: 700;
+		line-height: 1.53;
+		transition:
+			background 0.2s ease-in-out,
+			color 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $white;
+				color: $colorMain;
+			}
+		}
+	}
+	&__socials {
+		justify-content: flex-end;
+		@media (max-width: $mobile) {
+			justify-content: flex-start;
+		}
+	}
+	&__social {
+		svg {
+			@media (max-width: $mobile) {
+				width: toRem(24);
+				height: toRem(24);
+			}
+		}
+	}
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		padding-top: toRem(46);
+		border-top: toRem(1) solid #ffffff24;
+		@media (max-width: $mobile) {
+			border-top: none;
+		}
+		@media (max-width: $smallMobile) {
+			flex-direction: column;
+			gap: toRem(12);
+		}
+	}
+	&__copy,
+	&__privacy {
+		color: #7e7e7e;
+		font-size: toRem(13);
+		line-height: 1.69;
+	}
+	&__privacy {
+		transition: color 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}
+
+.address-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: toRem(8);
+	margin-bottom: toRem(36);
+	font-style: normal;
+	@media (max-width: $mobile) {
+		align-items: flex-start;
+	}
+	&__name,
+	&__mail {
+		position: relative;
+		padding-left: toRem(19);
+		font-size: toRem(15);
+		line-height: 1.46;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	&__name {
+		color: #afafaf;
+		&::before {
+			content: "";
+			width: toRem(9);
+			height: toRem(12);
+			background-image: url("../img/svg/location-gradient.svg");
+		}
+	}
+	&__mail {
+		color: $white;
+		transition: color 0.2s ease-in-out;
+		&::before {
+			content: "";
+			width: toRem(11);
+			height: toRem(9);
+			background-image: url("../img/svg/mail.svg");
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $zombie;
+			}
+		}
+	}
+}

@@ -1,0 +1,299 @@
+.header {
+	position: fixed;
+	z-index: 50;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #181818;
+	box-shadow: 0 toRem(5) toRem(40) 0 rgba(0, 0, 0, 0.06);
+	transition: background 0.3s ease-in-out;
+	&.scroll &__container {
+		min-height: toRem(110);
+	}
+	&.scroll {
+		background: rgba(0, 0, 0, 0.8);
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		align-items: center;
+		max-width: toRem(1800);
+		min-height: toRem(124);
+		padding-top: toRem(5);
+		padding-bottom: toRem(5);
+		transition: min-height 0.3s ease-in-out;
+		@media (max-width: $pc) {
+			min-height: toRem(110);
+			justify-content: flex-end;
+			gap: toRem(15);
+		}
+	}
+	&__logo {
+		position: relative;
+		z-index: 21;
+		@include adaptiveValue("margin-right", 50, 25, 0, 1920, 1740);
+		@media (max-width: $pc) {
+			margin-right: auto;
+		}
+	}
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue("margin-right", 85, 30, 0, 1920, 1740);
+		@include adaptiveValue("margin-left", 85, 30, 0, 1920, 1740);
+		@media (max-width: $pc) {
+			position: absolute;
+		}
+	}
+}
+
+.location-header {
+	display: flex;
+	gap: toRem(1);
+	@media (max-width: $pc) {
+		margin: 0 toRem(-15);
+	}
+	&__label {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: toRem(7);
+		padding: toRem(10) toRem(14);
+		background-color: #0c0c0c;
+		cursor: pointer;
+		@media (any-hover: hover) {
+			&:hover .location-header__icon {
+				fill: #e3d293;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover .location-header__radio {
+				color: $white;
+			}
+		}
+		@media (max-width: $pc) {
+			flex-grow: 1;
+			justify-content: center;
+			padding: toRem(15) toRem(14);
+		}
+	}
+	&__label--left {
+		border-radius: toRem(6) 0 0 toRem(6);
+		@media (max-width: $pc) {
+			border-radius: 0;
+		}
+	}
+	&__label--right {
+		border-radius: 0 toRem(6) toRem(6) 0;
+		@media (max-width: $pc) {
+			border-radius: 0;
+		}
+	}
+	&__icon {
+		width: toRem(9);
+		height: toRem(11);
+		fill: #5a5a5a;
+		transition: fill 0.2s ease-in-out;
+	}
+	&__input {
+		position: absolute;
+		width: toRem(1);
+		height: toRem(1);
+		opacity: 0;
+	}
+	&__input:checked + &__icon {
+		fill: $zombie;
+	}
+	&__input:checked ~ &__radio {
+		color: $white;
+	}
+	&__radio {
+		color: #a6a6a6;
+		font-size: toRem(11);
+		font-weight: 700;
+		line-height: 2;
+		text-transform: uppercase;
+		transition: color 0.2s ease-in-out;
+		@media (max-width: $pc) {
+			font-size: toRem(16);
+		}
+	}
+}
+
+.contacts-header {
+	display: flex;
+	align-items: center;
+	@include adaptiveValue("margin-right", 60, 20, 0, 1920, 1600);
+	@media (max-width: $tablet) {
+		flex-direction: column;
+		align-items: start;
+		row-gap: toRem(20);
+		margin-right: 0;
+	}
+	&__socials {
+		@include adaptiveValue("margin-right", 60, 20, 0, 1920, 1600);
+		@media (max-width: $tablet) {
+			margin-right: 0;
+		}
+	}
+	&__social {
+		@media (max-width: $tablet) {
+			svg {
+				width: toRem(30);
+				height: toRem(30);
+			}
+		}
+	}
+	&__phone {
+		margin-right: toRem(32);
+		color: $white;
+		font-family: $fontSecondary, sans-serif;
+		font-size: toRem(18);
+		font-weight: 700;
+		line-height: 1.1;
+		transition: color 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $zombie;
+			}
+		}
+		@media (max-width: $tablet) {
+			margin-right: 0;
+			font-size: toRem(24);
+		}
+	}
+	&__button {
+		color: $white;
+		transition: background 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #3c3c3c;
+			}
+		}
+		@media (max-width: $tablet) {
+			font-size: toRem(20);
+		}
+	}
+}
+
+.nav {
+	@media (max-width: $pc) {
+		position: fixed;
+		z-index: 20;
+		top: 0;
+		left: 100%;
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+		height: 100%;
+		padding: toRem(110) toRem(15) toRem(25) toRem(15);
+		background-color: #181818;
+		transition: left 0.5s;
+		&::before {
+			content: "";
+			position: fixed;
+			width: 100%;
+			height: toRem(110);
+			top: 0;
+			left: 100%;
+			background-color: #232222;
+			transition: left 0.5s;
+		}
+		&._active {
+			left: 0;
+			&::before {
+				left: 0;
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: toRem(10);
+		@include adaptiveValue("column-gap", 50, 20, 0, 1920, 1700);
+		justify-content: center;
+		font-size: toRem(15);
+		line-height: 1.46;
+		@media (max-width: $pc) {
+			flex-direction: column;
+			row-gap: 0;
+			margin: 0 toRem(-15) toRem(20);
+			font-size: toRem(26);
+		}
+	}
+	&__item {
+		@media (max-width: $pc) {
+			padding: 0 toRem(20);
+			border-bottom: toRem(1) solid #706f6f;
+			background-color: #232222;
+		}
+	}
+	&__link {
+		display: block;
+		color: $white;
+		transition: color 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #c7b679;
+			}
+		}
+		@media (max-width: $pc) {
+			padding: toRem(16) 0;
+		}
+	}
+}
+
+.burger {
+	display: none;
+	@media (max-width: $pc) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		margin-left: toRem(15);
+		color: $white;
+		z-index: 50;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		@media (max-width: $smallMobile) {
+			margin-left: toRem(10);
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: currentColor;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		&._active {
+			span {
+				width: 0;
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

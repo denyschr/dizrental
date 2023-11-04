@@ -1,0 +1,57 @@
+.user-block {
+	display: flex;
+	align-items: center;
+	gap: toRem(12);
+	@media (max-width: $smallMobile) {
+		gap: toRem(8);
+	}
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: toRem(23);
+		background-color: #0a0a0a;
+		transition: background 0.2s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #5a5a5a;
+			}
+		}
+		svg {
+			fill: $white;
+		}
+	}
+	&__button--cart {
+		position: relative;
+		z-index: 1;
+		padding: toRem(16) toRem(12);
+		span {
+			position: absolute;
+			right: toRem(-2);
+			top: toRem(-1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: toRem(16);
+			height: toRem(16);
+			padding: toRem(4) toRem(5);
+			border-radius: toRem(8);
+			background-color: #e73939;
+			color: $white;
+			font-family: $fontSecondary, sans-serif;
+			font-size: 9px;
+			font-weight: 700;
+		}
+		svg {
+			width: toRem(22);
+			height: toRem(14);
+		}
+	}
+	&__button--account {
+		padding: toRem(14) toRem(16);
+		svg {
+			width: toRem(14);
+			height: toRem(18);
+		}
+	}
+}

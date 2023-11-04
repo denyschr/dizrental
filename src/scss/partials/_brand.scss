@@ -1,0 +1,53 @@
+.brand {
+	@include adaptiveValue("margin-bottom", 200, 100, 0, 1920, 1160);
+	padding: toRem(80) toRem(30);
+	border-radius: 0 0 toRem(36) toRem(36);
+	background-color: $white;
+	@media (max-width: $pc) {
+		padding: toRem(50) toRem(30);
+	}
+	@media (max-width: $tablet) {
+		border-radius: 0;
+	}
+	&__container {
+		position: relative;
+		overflow: hidden;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			height: 100%;
+			width: toRem(100);
+		}
+		&::before {
+			left: 0;
+			background: linear-gradient(to right, #fff 0%, #fff0 100%);
+		}
+		&::after {
+			top: 0;
+			right: 0;
+			background: linear-gradient(to left, #fff 0%, #fff0 100%);
+		}
+	}
+	&__list {
+		display: flex;
+		width: calc(200px * 14);
+		animation: scroll 6s linear infinite;
+	}
+	&__item {
+		height: toRem(120);
+		width: toRem(200);
+		display: flex;
+		align-items: center;
+	}
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-200px * 7));
+	}
+}
