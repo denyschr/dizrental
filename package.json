@@ -2,7 +2,7 @@
   "name": "gulp-builder",
   "version": "1.0.0",
   "main": "gulpfile.js",
-  "homepage": "https://dchornoivanenko.github.io/project-name",
+  "homepage": "https://dchornoivanenko.github.io/dizrental",
   "scripts": {
     "deploy": "gh-pages -d dist"
   },
